@@ -1,16 +1,29 @@
 :root {
-    --primary-color: #f03aaae1;
-    /* A vibrant pink */
-    --secondary-color: #1cdad0ec;
-    /* A bright teal */
-    --text-color: #333;
-    /* Dark gray for text */
-    --bg-color: #f4f4f4;
-    /* Light gray for background */
-    --text-color-light: #333333;
-    --bg-color-light: #f4f4f4;
-    --text-color-dark: #f4f4f4;
-    --bg-color-dark: #222222;
+    --beige: #C6B8AB;
+    /* color one - light beige */
+    --light-gray: #CDC5BD;
+    /* color two - light gray */
+    --brown: #A17D60;
+    /* color three - medium brown */
+    --black: #19100E;
+    /* color four - almost black */
+    --dark-brown: #67432E;
+    /* color five - dark brown */
+    --deeper-brown: #442918;
+    /* color six - deeper brown */
+
+    /* Light mode */
+    --text-color-light: #442918;
+    /* deeper brown for text */
+    --bg-color-light: #fff;
+    --header-light: var(--brown);
+    --nav-light: var(--beige);
+
+    /* Dark mode */
+    --text-color-dark: var(--beige);
+    --bg-color-dark: var(--black);
+    --header-dark: var(--dark-brown);
+    --nav-dark: var(--light-gray);
 }
 
 .title {
@@ -32,6 +45,7 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 1001;
 }
 
 .dark-mode-checkbox {
@@ -39,95 +53,110 @@ body {
     position: absolute;
 }
 
-label {
-    width: 200px;
-    height: 20px;
-    position: relative;
-    display: inline-block;
-    background-color: var(--primary-color);
-    border-radius: 100px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-label::after {
-    content: '';
-    width: 20px;
-    height: 20px;
-    background-color: var(--text-color-light);
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: background-color 0.3s;
-}
-
-input:checked+label {
-    background-color: var(--secondary-color);
-}
-
-input:checked+label:after {
-    background-color: var(--secondary-color);
-}
-
 .dark-mode-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.toggle-track {
-    position: relative;
     width: 50px;
-    height: 24px;
-    background-color: #ccc;
-    border-radius: 12px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
 }
 
 .toggle-indicator {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 20px;
-    height: 20px;
-    background-color: white;
+    width: 26px;
+    height: 26px;
+    background-color: #f9d71c;
     border-radius: 50%;
-    transition: transform 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
+.toggle-indicator svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sun-icon {
+    opacity: 1;
+}
+
+.moon-icon {
+    opacity: 0;
+}
+
+/* Dark mode specific toggle styles */
+body.dark-mode .toggle-indicator {
+    transform: translateX(24px);
+    background-color: #383838;
+}
+
+body.dark-mode .sun-icon {
+    opacity: 0;
+}
+
+body.dark-mode .moon-icon {
+    opacity: 1;
+}
+
+/* Remove any conflicting styles */
+.toggle-track,
 .toggle-text {
-    margin-left: 10px;
-    font-size: 14px;
-}
-
-/* Checked state */
-.dark-mode-checkbox:checked+.dark-mode-label .toggle-track {
-    background-color: var(--primary-color);
-}
-
-.dark-mode-checkbox:checked+.dark-mode-label .toggle-indicator {
-    transform: translateX(26px);
+    display: none;
 }
 
 /* Dark mode styles */
-.dark-mode-checkbox:checked~body {
-    --text-color: #f4f4f4;
-    --bg-color: #333;
+body.dark-mode {
+    color: var(--text-color-dark);
+    background-color: var(--bg-color-dark);
 }
 
-.dark-mode-checkbox:checked~body section {
-    background-color: #444;
+body.dark-mode header {
+    background-color: var(--header-dark);
 }
 
-/* Keep nav list text color black in dark mode */
-.dark-mode-checkbox:checked~body .nav-list {
-    color: black;
+body.dark-mode main {
+    background-color: var(--bg-color-dark);
 }
 
-main {
-    background-color: rgb(245, 244, 243);
+body.dark-mode section {
+    background-color: var(--bg-color-dark);
+}
+
+body.dark-mode .nav-list {
+    background-color: var(--nav-dark);
+    color: var(--golden);
+}
+
+body.dark-mode .nav-list a {
+    color: var(--golden);
+}
+
+body.dark-mode .title {
+    color: var(--golden);
+}
+
+body.dark-mode footer {
+    background-color: var(--bg-color-dark);
+    color: var(--golden);
+}
+
+body.dark-mode footer a {
+    color: var(--coral);
 }
 
 .container {
@@ -137,7 +166,7 @@ main {
 }
 
 header {
-    background-color: hotpink;
+    background-color: var(--header-light);
     text-align: center;
     padding: 20px 0;
 }
@@ -158,17 +187,17 @@ header {
 
 .nav-list {
     display: flex;
-    list-style-type: none;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
     justify-content: center;
-    justify-content: space-around;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: var(--text-color);
-    background-color: aquamarine;
-    padding: 5px;
+    background-color: transparent;
 }
 
 .nav-list a:hover {
-    color: hotpink;
+    color: var(--coral);
 }
 
 /* Light mode (default) styles */
@@ -178,20 +207,14 @@ body {
     transition: color 0.3s, background-color 0.3s;
 }
 
-/* Dark mode styles */
-.dark-mode-checkbox:checked~body {
-    color: var(--text-color-dark);
-    background-color: var(--bg-color-dark);
-}
-
 /* Optionally, style other elements in dark mode */
-.dark-mode-checkbox:checked~body header {
-    background-color: var(--bg-color-dark);
+.dark-mode-checkbox:checked~body section {
+    background-color: #444;
 }
 
+/* Keep nav list text color black in dark mode */
 .dark-mode-checkbox:checked~body .nav-list {
     color: black;
-    /* Keep nav text black in dark mode */
 }
 
 #theme-switch {
@@ -200,11 +223,233 @@ body {
     position: fixed;
     padding: 0;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: var(--purple);
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 20px;
+    top: 10px;
     right: 20px;
+}
+
+/* New Navigation Styles */
+.main-nav {
+    background-color: var(--brown);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.8rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: var(--beige);
+}
+
+/* Updated nav list styles */
+.nav-list {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: var(--beige);
+}
+
+/* Hover animation for nav items */
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--beige);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+/* Dark mode specific styles */
+body.dark-mode .main-nav {
+    background-color: var(--dark-brown);
+}
+
+body.dark-mode .logo a {
+    color: white;
+}
+
+body.dark-mode .logo a:hover {
+    color: var(--beige);
+}
+
+body.dark-mode .nav-list a {
+    color: white;
+}
+
+body.dark-mode .nav-list a:hover {
+    color: var(--beige);
+}
+
+body.dark-mode .nav-list a::after {
+    background-color: var(--beige);
+}
+
+/* Dark mode toggle styles in dark mode */
+body.dark-mode .toggle-track {
+    background-color: var(--deeper-brown);
+    border: 1px solid var(--beige);
+}
+
+body.dark-mode .toggle-indicator {
+    background-color: var(--beige);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-list {
+        gap: 1.5rem;
+    }
+
+    .nav-list a {
+        padding: 0.5rem;
+    }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    padding: 4rem 0;
+}
+
+.profile-intro {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.denise-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.title {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--text-color-light);
+}
+
+.subtitle {
+    margin: 0.5rem 0 0;
+    font-size: 1.25rem;
+    color: var(--brown);
+}
+
+/* Dark mode adjustments */
+body.dark-mode .main-nav {
+    background-color: var(--dark-brown);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .logo a {
+    color: var(--beige);
+}
+
+body.dark-mode .logo a:hover {
+    color: var(--light-gray);
+}
+
+body.dark-mode .nav-list a {
+    color: var(--beige);
+}
+
+body.dark-mode .nav-list a:hover {
+    color: var(--light-gray);
+}
+
+body.dark-mode .nav-list a::after {
+    background-color: var(--light-gray);
+}
+
+/* Dark mode toggle styles in dark mode */
+body.dark-mode .toggle-track {
+    background-color: var(--dark-brown);
+    border: 1px solid var(--beige);
+}
+
+body.dark-mode .toggle-indicator {
+    background-color: var(--beige);
+    transform: translateX(22px);
+}
+
+/* Optional: Add a subtle transition effect for the nav items */
+.nav-list a {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-list a:hover {
+    transform: translateY(-1px);
+}
+
+/* Adjust the dark mode toggle position */
+.dark-mode-toggle {
+    margin-left: 2rem;
+}
+
+/* Make the toggle more compact */
+.toggle-track {
+    width: 40px;
+    height: 20px;
+}
+
+.toggle-indicator {
+    width: 16px;
+    height: 16px;
+}
+
+.toggle-text {
+    display: none;
 }
