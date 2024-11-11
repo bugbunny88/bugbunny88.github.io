@@ -26,16 +26,11 @@
     --nav-dark: var(--light-gray);
 }
 
-.title {
-    color: black;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--text-color-light);
     background-color: var(--bg-color-light);
-    transition: color 0.3s, background-color 0.3s;
     margin: 0;
     padding: 0;
 }
@@ -150,25 +145,39 @@ body.dark-mode .title {
     color: var(--golden);
 }
 
-body.dark-mode footer {
-    background-color: var(--bg-color-dark);
-    color: var(--golden);
-}
-
-body.dark-mode footer a {
-    color: var(--coral);
-}
-
 .container {
-    max-width: 1200px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.container a {
+    color: var(--brown);
+    /* Change link color */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.container a:hover {
+    color: var(--dark-brown);
+    /* Change hover color */
+}
+
+/* Dark mode styles for the link */
+body.dark-mode .container a {
+    color: var(--beige);
+    /* Change link color in dark mode */
+}
+
+body.dark-mode .container a:hover {
+    color: var(--light-gray);
+    /* Change hover color in dark mode */
 }
 
 header {
     background-color: var(--header-light);
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .image-container {
@@ -177,62 +186,6 @@ header {
     align-items: center;
 }
 
-.denise-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-}
-
-.nav-list {
-    display: flex;
-    gap: 3rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-grow: 1;
-    justify-content: center;
-    background-color: transparent;
-}
-
-.nav-list a:hover {
-    color: var(--coral);
-}
-
-/* Light mode (default) styles */
-body {
-    color: var(--text-color-light);
-    background-color: var(--bg-color-light);
-    transition: color 0.3s, background-color 0.3s;
-}
-
-/* Optionally, style other elements in dark mode */
-.dark-mode-checkbox:checked~body section {
-    background-color: #444;
-}
-
-/* Keep nav list text color black in dark mode */
-.dark-mode-checkbox:checked~body .nav-list {
-    color: black;
-}
-
-#theme-switch {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--purple);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 10px;
-    right: 20px;
-}
-
-/* New Navigation Styles */
 .main-nav {
     background-color: var(--brown);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -243,7 +196,7 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -267,44 +220,35 @@ body {
 /* Updated nav list styles */
 .nav-list {
     display: flex;
-    gap: 3rem;
+    gap: 0rem;
     list-style: none;
     margin: 0;
     padding: 0;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: left;
     background-color: transparent;
 }
 
 .nav-list a {
     text-decoration: none;
     color: white;
-    font-weight: 500;
+    font-weight: 900;
     padding: 0.5rem 1rem;
     position: relative;
     transition: color 0.3s ease;
 }
 
 .nav-list a:hover {
-    color: var(--beige);
-}
-
-/* Hover animation for nav items */
-.nav-list a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: var(--beige);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
+    color: var(--deeper-brown);
 }
 
 /* Dark mode specific styles */
 body.dark-mode .main-nav {
     background-color: var(--dark-brown);
+}
+
+body.dark-mode .nav-list {
+    background-color: transparent;
 }
 
 body.dark-mode .logo a {
@@ -316,15 +260,11 @@ body.dark-mode .logo a:hover {
 }
 
 body.dark-mode .nav-list a {
-    color: white;
-}
-
-body.dark-mode .nav-list a:hover {
     color: var(--beige);
 }
 
-body.dark-mode .nav-list a::after {
-    background-color: var(--beige);
+body.dark-mode .nav-list a:hover {
+    color: var(--deeper-brown);
 }
 
 /* Dark mode toggle styles in dark mode */
@@ -354,102 +294,177 @@ body.dark-mode .toggle-indicator {
 
 /* Hero Section Styles */
 .hero-section {
-    padding: 4rem 0;
+    background-color: var(--light-gray);
+    padding: 0;
+    text-align: center;
+    margin-bottom: 0rem;
 }
 
-.profile-intro {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    max-width: 800px;
+.hero-content {
+    max-width: 1400px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
 }
 
-.denise-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+.hero-text {
+    flex: 1;
+    max-width: 6500px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin: 0;
+    color: var(--deeper-brown);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+    color: var(--dark-brown);
+    line-height: 1.4;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-icons a {
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
     object-fit: cover;
 }
 
-.intro-text {
-    flex: 1;
-}
-
-.title {
-    margin: 0;
-    font-size: 2.5rem;
-    color: var(--text-color-light);
-}
-
-.subtitle {
-    margin: 0.5rem 0 0;
-    font-size: 1.25rem;
-    color: var(--brown);
-}
-
 /* Dark mode adjustments */
-body.dark-mode .main-nav {
-    background-color: var(--dark-brown);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-body.dark-mode .logo a {
+body.dark-mode .hero-title {
     color: var(--beige);
 }
 
-body.dark-mode .logo a:hover {
+body.dark-mode .hero-subtitle {
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .social-handle {
     color: var(--light-gray);
 }
 
-body.dark-mode .nav-list a {
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Footer styles */
+.footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.linkedin-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+footer a {
+    color: var(--brown);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--dark-brown);
+}
+
+/* Dark mode footer styles */
+body.dark-mode .footer-link img {
+    filter: brightness(1.5);
+    /* Makes the icon slightly brighter in dark mode */
+}
+
+footer {
+    background-color: var(--brown);
+    /* Change to desired color */
     color: var(--beige);
+    /* Change text color if needed */
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
 }
 
-body.dark-mode .nav-list a:hover {
+footer a {
+    color: var(--beige);
+    /* Change link color if needed */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
     color: var(--light-gray);
+    /* Change hover color if needed */
 }
 
-body.dark-mode .nav-list a::after {
-    background-color: var(--light-gray);
-}
-
-/* Dark mode toggle styles in dark mode */
-body.dark-mode .toggle-track {
+/* Dark mode footer styles */
+body.dark-mode footer {
     background-color: var(--dark-brown);
-    border: 1px solid var(--beige);
+    /* Change to desired dark mode color */
+    color: var(--light-gray);
+    /* Change text color if needed */
 }
 
-body.dark-mode .toggle-indicator {
-    background-color: var(--beige);
-    transform: translateX(22px);
+body.dark-mode footer a {
+    color: var(--light-gray);
+    /* Change link color if needed */
 }
 
-/* Optional: Add a subtle transition effect for the nav items */
-.nav-list a {
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.nav-list a:hover {
-    transform: translateY(-1px);
-}
-
-/* Adjust the dark mode toggle position */
-.dark-mode-toggle {
-    margin-left: 2rem;
-}
-
-/* Make the toggle more compact */
-.toggle-track {
-    width: 40px;
-    height: 20px;
-}
-
-.toggle-indicator {
-    width: 16px;
-    height: 16px;
-}
-
-.toggle-text {
-    display: none;
+body.dark-mode footer a:hover {
+    color: var(--beige);
+    /* Change hover color if needed */
 }

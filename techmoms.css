@@ -1,0 +1,180 @@
+:root {
+    --beige: #C6B8AB;
+    --light-gray: #CDC5BD;
+    --brown: #A17D60;
+    --black: #19100E;
+    --dark-brown: #67432E;
+    --deeper-brown: #442918;
+
+    /* Light mode */
+    --text-color-light: #442918;
+    --bg-color-light: #fff;
+    --header-light: var(--brown);
+    --nav-light: var(--beige);
+
+    /* Dark mode */
+    --text-color-dark: #C6B8AB;
+    --bg-color-dark: #19100E;
+    --header-dark: #67432E;
+    --nav-dark: #CDC5BD;
+}
+
+body.dark-mode .main-nav {
+    background-color: var(--dark-brown);
+}
+
+.main-nav {
+    background-color: var(--brown);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.8rem 0;
+}
+
+.hero-section {
+    background-color: var(--light-gray);
+    padding: 0;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color-light);
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--deeper-brown);
+}
+
+.answer-bubble {
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    max-width: 90%;
+    word-wrap: break-word;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.answer-bubble p {
+    margin: 0;
+}
+
+/* main-image */
+.main-image {
+    width: 100%;
+    max-width: 800px;
+    height: 533.33px;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+}
+
+.intro-text {
+    text-align: center;
+}
+
+.title {
+    color: var(--deeper-brown);
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    color: var(--dark-brown);
+    margin: 0.5rem 0 0;
+    font-size: 1.25rem;
+}
+
+/* Content Sections */
+section {
+    margin: 2rem 0;
+    background-color: tran;
+}
+
+section h2 {
+    color: var(--deeper-brown);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+section p,
+section ul {
+    color: var(--dark-brown);
+}
+
+footer {
+    background-color: var(--brown);
+    color: var(--beige);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 200rem;
+    }
+
+
+    .hero-section {
+        padding: 1rem 0;
+
+    }
+
+    .profile-intro {
+        gap: 1.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode main {
+    background-color: var(--bg-color-dark);
+}
+
+body.dark-mode section {
+    background-color: transparent;
+}
+
+body.dark-mode section h2 {
+    color: var(--deeper-brown);
+}
+
+body.dark-mode section p,
+body.dark-mode section ul {
+    color: var(--dark-brown);
+}
+
+body.dark-mode footer {
+    background-color: var(--dark-brown);
+    color: var(--light-gray);
+}
