@@ -302,7 +302,7 @@ body.dark-mode .toggle-indicator {
 
 .hero-content {
     max-width: 1400px;
-    margin: 0 auto;
+    margin-bottom: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -467,4 +467,42 @@ body.dark-mode footer a {
 body.dark-mode footer a:hover {
     color: var(--beige);
     /* Change hover color if needed */
+}
+
+/* Tech Moms Page */
+
+.main-image {
+    width: 100%;
+    max-width: 800px;
+    height: 533.33px;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+}
+
+.answer-bubble {
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    max-width: 90%;
+    word-wrap: break-word;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.answer-bubble p {
+    margin: 0;
+}
+
+body.dark-mode .answer-bubble {
+    background-color: var(--light-gray);
+    color: var(--dark-brown);
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+    /* Adjust if needed */
+}
+
+body.dark-mode .answer-bubble p {
+    color: var(--dark-brown);
 }
