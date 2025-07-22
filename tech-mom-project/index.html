@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <title>Denise Kidman - QA Engineer</title>
+</head>
+
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">DK</a>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="techmoms.html">Tech Moms</a></li>
+            </ul>
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="darkmode-toggle" class="dark-mode-checkbox">
+                <label for="darkmode-toggle" class="dark-mode-label">
+                    <div class="toggle-indicator">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1z" />
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-0.46-0.04-0.92-0.1-1.36-0.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81 0.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z" />
+                        </svg>
+                    </div>
+                </label>
+            </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Denise Kidman</h1>
+                        <p class="hero-subtitle">I have a passion for giving customers the
+                            best user experience. I love
+                            learning
+                            new skills and I can’t wait to keep expanding my expertise as a Software QA Engineer.</p>
+                        <div class="container">
+                            <img src="data:image/png;base64,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"
+                                alt="LinkedIn" class="linkedin-icon">
+                            <a href="https://www.linkedin.com/in/denise-kidman/" target="_blank">Connect with me on
+                                LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="img/dkimage.png" alt="Portrait of Denise Kidman" />
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <ul>
+                    <li> <strong>Cross-functional collaboration:</strong> Work with developers, stakeholders, and
+                        customers
+                        to ensure product quality and integration.</li>
+                    <li> <strong>Mentoring:</strong> I teach testers and customers how to use the product and features
+                        of the application as
+                        well as Playwright code using Python and Typescript.</li>
+                    <li> <strong>Documentation creation:</strong> Create user guides, FAQs, and tutorials in Markdown
+                        and
+                        React, embedding HTML/JavaScript and organizing content effectively</li>
+                    <li> <strong>Sprint planning and retrospectives:</strong> Align QA with business goals and
+                        identify testing needs during planning sessions.</li>
+                    <li> <strong>Test case creation:</strong> Write comprehensive test cases using Gherkin.</li>
+                    <li> <strong> Bug reporting and tracking:</strong> Manage a ClickUp bug dashboard to track and
+                        document
+                        issues.</li>
+                    <li> <strong> Manual and Automated testing:</strong> Perform functional, UI, and regression testing
+                        across browsers.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Tools</h2>
+                <ul>
+                    <li> <strong>Qualiti:</strong> Test case management and automation.</li>
+                    <li> <strong>Docusaurus:</strong> Documentation creation and maintenance.</li>
+                    <li> <strong>Github:</strong> Deployment and team collaboration.</li>
+                    <li> <strong> Chrome DevTools:</strong> Debugging and analyzing issues.</li>
+                    <li> <strong>Playwright Trace Viewer:</strong> To track issues in detail.</li>
+                    <li> <strong>Qase:</strong> Managing test cases.</li>
+                    <li> <strong> ClickUp:</strong> Bug tracking and bug dashboard management.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Experience</h2>
+                <ul>
+                    <li><strong>QA Engineer at Qualiti</strong>
+                        <ul>
+                            <li>Established foundational test case templates and bug reporting processes.</li>
+                            <li>Managed test cases and conducted thorough app testing.</li>
+                            <li>Streamlined bug reporting with a ClickUp dashboard.</li>
+                            <li>Built and maintained a documentation website with Docusaurus.</li>
+                            <li>Developed test automation frameworks using Playwright and Python.</li>
+                            <li>Collaborated with cross-functional teams to ensure smooth integration.</li>
+                            <li>Aligned QA processes with business goals in sprint planning and retrospectives.</li>
+                            <li>Created comprehensive test cases with Gherkin for team clarity and AI-generated
+                                scenarios.
+                            </li>
+                        </ul>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="copyright__info">&copy; 2024 Denise Kidman. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Add this line before closing body tag -->
+    <script src="index.js"></script>
+</body>
+
+</html>
