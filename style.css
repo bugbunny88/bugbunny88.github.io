@@ -612,6 +612,28 @@ section {
     box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
 }
 
+/* Small LinkedIn button for experience section */
+.linkedin-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    margin: 2rem auto 0;
+    width: fit-content;
+}
+
+.linkedin-button:hover {
+    background: var(--gradient-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
 /* Footer */
 .footer {
     background: var(--darker-purple);
